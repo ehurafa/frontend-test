@@ -1,0 +1,106 @@
+/* MIXINS */
+
+// border-radius
+@mixin border-radius($radius: 50%){
+   -webkit-border-radius: $radius;
+   -moz-border-radius: $radius;
+   -ms-border-radius: $radius;
+   -o-border-radius: $radius;
+   border-radius: $radius;
+}
+@mixin radiustl($radius: 5px){
+   -webkit-border-top-left-radius: $radius;
+   -moz-border-top-left-radius: $radius;
+   -ms-border-top-left-radius: $radius;
+   -o-border-top-left-radius: $radius;
+   border-top-left-radius: $radius;
+}
+@mixin radiustr($radius: 5px){
+   -webkit-border-top-right-radius: $radius;
+   -moz-border-top-right-radius: $radius;
+   -ms-border-top-right-radius: $radius;
+   -o-border-top-right-radius: $radius;
+   border-top-right-radius: $radius;
+}
+@mixin radiusbl($radius: 5px){
+   -webkit-border-bottom-left-radius: $radius;
+   -moz-border-bottom-left-radius: $radius;
+   -ms-border-bottom-left-radius: $radius;
+   -o-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+@mixin radiusbr($radius: 5px){
+   -webkit-border-bottom-right-radius: $radius;
+   -moz-border-bottom-right-radius: $radius;
+   -ms-border-bottom-right-radius: $radius;
+   -o-border-bottom-right-radius: $radius;
+   border-bottom-right-radius: $radius;
+}
+
+
+// box-sizing 
+@mixin box-sizing( $type: border-box ) {
+   -webkit-box-sizing: $type;
+   -moz-box-sizing: $type;
+   -o-box-sizing: $type;
+   -ms-box-sizing: $type;
+   box-sizing: $type;
+}
+
+// font
+@mixin fonte($font-family: $font-1, $font-weight: "normal", $font-size: 12px, $font-color: #000){
+   font-family: $font-family;
+   font-weight: $font-weight;
+   font-size: $font-size;
+   color: $font-color;
+}
+
+// size
+@mixin size($width, $height: $width) {
+   width: $width;
+   height: $height;
+}
+
+// pseudo
+@mixin pseudo($display: inline-block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+//triangulo
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+ 
+
+
+
+
+
+

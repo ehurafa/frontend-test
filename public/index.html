@@ -2,13 +2,54 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
     <title>R7 FrontEnd Test</title>
 
-    <link rel="stylesheet" href="stylesheets/style.css" media="all">
+     <!-- build:css css/index.min.css -->   
+     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
+     <link rel="stylesheet" href="css/main.css" media="all">
+     <!-- endbuild -->
+
+
   </head>
   <body>
-      <!-- let's code :D -->
 
-    <script src="javascripts/main.js"></script> 
+    <main>
+
+    <!-- header -->
+    <header>
+      <div class="logo">        
+        <img src="img/logo.png" alt="A Fazenda" />
+      </div>
+      <div class="text">
+        <h1>Ranking</h1>
+      </div>
+    </header>
+    <!-- /header -->     
+
+    <!-- lista -->
+      <div id="votacaoView">
+        <table  id="table">  </table> 
+      </div>
+    <!-- /lista -->
+
+    </main>
+    
+    
+    <!-- build:js js/index.min.js -->
+    <script src="js/app/Votacao.js"></script>    
+    <script src="js/app/helpers/CompareHelper.js"></script>
+    <script src="js/app/helpers/FazendeirosHelper.js"></script>
+    <script src="js/app/helpers/PorcentagemHelper.js"></script>       
+    <script src="js/app/main.js"></script> 
+    <!-- endbuild -->
+
+    <script>
+      window.onload = function(){    
+        let votacao = new Votacao().ret;
+      }
+      
+    </script>
+
 </html>

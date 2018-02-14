@@ -13,9 +13,13 @@ Crie uma branch (pode ser com seu nome mesmo) e depois instale as dependências:
 npm install
 ```
 
-Após isso, rode a aplicação:
+Rodar o projeto em dev
 ```sh
-npm start
+npm run gulp server
+```
+Buildar o projeto (concatenar e minificar arquivos):
+```sh
+npm run gulp deploy
 ```
 
 Depois do seu setup você precisará seguir as seguintes instruções, para construir a aplicação:
